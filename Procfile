@@ -1,0 +1,1 @@
+web: java -jar target/my481Homework-1.0-SNAPSHOT.jar
