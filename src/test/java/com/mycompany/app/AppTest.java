@@ -168,25 +168,6 @@ public class AppTest
             assertTrue(expectedResult.get(i) == result.get(i));
     }
 
-    public void testUnExceptedResult() {
-        ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(5, 27, 7, 11 ));
-        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(4, 2, 16, 40));
-        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(17, 9, 6, 4 , 5));
-        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 11, 81, 14));
-        
-        ArrayList<Integer> expectedResult = new ArrayList<>(Arrays.asList(17, 27, 81, 14));
-        
-        ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
-
-        boolean control = true; 
-        for (int i = 0; i < result.size(); i++){
-            if(expectedResult.get(i) != result.get(i)){
-               control = false; 
-            }
-        }
-        assertFalse(control);
-    }
-
     public void testTheAuxMethod(){
         assertTrue(48 == new App().biggestNumber(7,8,1,48));
     }
