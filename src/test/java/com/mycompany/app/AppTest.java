@@ -45,7 +45,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(null , array2 , array3 , array4 );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -56,7 +56,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(array2 , null , array3 , array4 );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -66,7 +66,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(array2 , array3 , null , array4 );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -76,7 +76,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(array2 , array4 , array3 , null );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -86,7 +86,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(empty , array2 , array3 , array4 );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -96,7 +96,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(array2 , empty , array3 , array4 );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -106,7 +106,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(array3 , array2 , empty , array4 );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -116,7 +116,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(array4 , array2 , array3 , empty );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -127,7 +127,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -138,7 +138,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4 , 5));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -150,7 +150,7 @@ public class AppTest
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4 , 5));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertEquals(empty.get(i), result.get(i));
     }
 
@@ -164,7 +164,7 @@ public class AppTest
         
         ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
 
-        for (int i = 0; i < result.length; i++)
+        for (int i = 0; i < result.size(); i++)
             assertTrue(expectedResult.get(i) == result.get(i));
     }
 
@@ -179,7 +179,7 @@ public class AppTest
         ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
 
         boolean control = true; 
-        for (int i = 0; i < result.length; i++){
+        for (int i = 0; i < result.size(); i++){
             if(expectedResult.get(i) != result.get(i)){
                control = false; 
             }

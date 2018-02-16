@@ -113,8 +113,8 @@ public class App
 		ArrayList<Integer> tempArray = App.biggestInTheIndices(inputList, inputList2 , inputList3 , inputList4 );
 		String result = "";
     	
-		for (int i = 0 ; tempArray.size() ; i++){
-			result += ""+tempArray.get(i) + " "; 
+		for (int i = 0 ; i < tempArray.size() ; i++){
+			result += ""+tempArray.get(i)+ " "; 
 		}
 
 
