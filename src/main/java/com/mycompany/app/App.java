@@ -110,12 +110,10 @@ public class App
 		System.out.println(inputList4);
 
 
-		ArrayList<Integer> tempArray = App.biggestInTheIndices(inputList, inputList2 , inputList3 , inputList4 );
-		String result = "";
+		ArrayList<Integer> result = App.biggestInTheIndices(inputList, inputList2 , inputList3 , inputList4 );
+		
     	
-		for (int i = 0 ; i < tempArray.size() ; i++){
-			result += ""+tempArray.get(i)+ " "; 
-		}
+		
 
 
         Map map = new HashMap();
