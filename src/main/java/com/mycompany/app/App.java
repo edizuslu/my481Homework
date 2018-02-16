@@ -120,7 +120,7 @@ public class App
 
 
         Map map = new HashMap();
-        map.put("result:",result);
+        map.put("result", result);
         return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 
