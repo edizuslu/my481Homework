@@ -14,41 +14,45 @@ import spark.template.mustache.MustacheTemplateEngine;
 public class App 
 {
 
-	//this method returns true when multiplication of array1 with the last element of array2 equals 
-    // multiplication of array2 and the last element of array1. Else this method returns false 
-    public static boolean equalityOfExtendedArrays(ArrayList<Integer> array1 , ArrayList<Integer> array2 , int a1 , int a2){
+	//This method takes four list of integer and create a new list which have the biggest numbers in the all indices.
+
+    public static ArrayList<Integer> biggestInTheIndices(ArrayList<Integer> array1 , ArrayList<Integer> array2 , ArrayList<Integer> array3 , ArrayList<Integer> array4){
     	
-    	if (array1 == null) return false;
-    	if (array2 == null) return false;
-    	if (array1.size() == 0) return false;
-    	if (array2.size() == 0) return false;
-    	//you cant entry a emtpy array as array1 or array2
+    	ArrayList<Integer> empty = new ArrayList<Integer>(); 
 
-    	if (array1.size() != array2.size()) return false;
-    	//you cant entry two array that have different sizes
-
-    	ArrayList<Integer> array1MultiplyWithA1 = new ArrayList<Integer>();
-		ArrayList<Integer> array2MultiplyWithA2 = new ArrayList<Integer>();
+    	if (array1 == null) return empty;
+    	if (array2 == null) return empty;
+    	if (array3 == null) return empty;
+    	if (array4 == null) return empty;
     	
-    	//multiplication the array1 with the last element of array2
-    	for (int element : array1){
-    		array1MultiplyWithA1.add(element*a2);
-    	}    	
+    	if (array1.size() == 0) return empty;
+    	if (array2.size() == 0) return empty;
+    	if (array3.size() == 0) return empty;
+    	if (array4.size() == 0) return empty;
+    	
 
-    	//multiplication the array1 with the last element of array2
-    	for (int element : array2){
-    		array2MultiplyWithA2.add(element*a1);
-    	}    	
+    	if (array1.size() != array2.size() || array3.size() != array4.size() || array1.size() != array3.size() ) return empty;
 
-    	boolean control = true;
-
-    	for (int i = 0 ; i < array1MultiplyWithA1.size() ; i++ ){//same sizes
-
-    		if (array1MultiplyWithA1.get(i) != array2MultiplyWithA2.get(i))
-    			control = false;
+    	ArrayList<Integer> resultArray = new ArrayList<Integer>();
+		
+    	for (int i = 0 ; i < array1.size() ; i++){
+    		resultArray.add(biggestNumber(array1.get(i),array2.get(i),array3.get(i),array4.get(i)); 
     	}
 
-    	return control;	
+    	return resultArray;	
+    }
+
+    public static int the biggestNumber(int a , int b , int c , int d){
+    	int temp = 0;
+    	if (a >= temp)
+    		temp = a;
+    	if (b >= temp)
+    		temp = b;
+    	if (c >= temp)
+    		temp = c;
+    	if (d >= temp)
+    		temp = d;
+    	return temp;
     }
 
 
@@ -81,15 +85,41 @@ public class App
         }
         System.out.println(inputList2);
         
-        //parameter 3 and 4
-        int lastElementOfInputList1 = inputList.get(inputList.size()-1);//last element of first input
-		int lastElementOfInputList2 = inputList2.get(inputList2.size()-1);//last element of second input
+        //input3
+        
+        String input3 = req.queryParams("input3");
+        java.util.Scanner sc3 = new java.util.Scanner(input3);
+        sc3.useDelimiter("[;\r\n]+");
+        java.util.ArrayList<Integer> inputList3 = new java.util.ArrayList<>();
+        while (sc3.hasNext()){
+        	int value = Integer.parseInt(sc3.next().replaceAll("\\s",""));
+            inputList3.add(value);
+        }
+		System.out.println(inputList3);
+		
+		//input 4
+
+		String input4 = req.queryParams("input4");
+        java.util.Scanner sc4 = new java.util.Scanner(input4);
+        sc4.useDelimiter("[;\r\n]+");
+        java.util.ArrayList<Integer> inputList4 = new java.util.ArrayList<>();
+        while (sc4.hasNext()){
+        	int value = Integer.parseInt(sc4.next().replaceAll("\\s",""));
+            inputList4.add(value);
+        }
+		System.out.println(inputList4);
 
 
-        boolean result = App.equalityOfExtendedArrays(inputList, inputList2 , lastElementOfInputList2 , lastElementOfInputList1 );
+		ArrayList<Integer> tempArray = App.biggestInTheIndices(inputList, inputList2 , inputList3 , inputList4 );
+		String result = "";
+    	
+		for (int i = 0 ; tempArray.size() ; i++){
+			result += ""+tempArray.get(i) + " "; 
+		}
+
 
         Map map = new HashMap();
-        map.put("result", result);
+        map.put("result : ", result);
         return new ModelAndView(map, "compute.mustache");
         }, new MustacheTemplateEngine());
 

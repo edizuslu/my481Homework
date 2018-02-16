@@ -40,43 +40,150 @@ public class AppTest
     }
 
     public void testNullFirstArray() {
-        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-        assertFalse(new App().equalityOfExtendedArrays(null , array , 4 , 0 ));
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(null , array2 , array3 , array4 );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
     }
 
 
     public void testNullSecondArray() {
-        ArrayList<Integer> array = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-        assertFalse(new App().equalityOfExtendedArrays(array , null , 0 , 4 ));
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(array2 , null , array3 , array4 );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
     }
 
-    public void testEmptyArray1() {
-      ArrayList<Integer> array = new ArrayList<>();
-      ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+    public void testNullThirdArray() {
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(array2 , array3 , null , array4 );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
+    }
+
+    public void testNullFourthArray() {
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(array2 , array4 , array3 , null );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
+    }
+
+    public void testEmptyFirstArray() {
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(empty , array2 , array3 , array4 );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
+    }
+
+    public void testEmptySecondArray() {
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(array2 , empty , array3 , array4 );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
+    }
+
+    public void testEmptyThirdArray() {
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(array3 , array2 , empty , array4 );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
+    }
+
+    public void testEmptyFourthArray() {
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(array4 , array2 , array3 , empty );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
+    }
+
+    public void testDifferentSizesForFirstAndSecond() {
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4 , 5));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
+    }
+
+    public void testDifferentSizesForThirdAndFourth() {
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4 , 5));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
+    }
+
+
+    public void testDifferentSizesForFirstAndThird() {
+        ArrayList<Integer> empty = new ArrayList<Integer>();
+        ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4 , 5));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
+        for (int i = 0; i < result.length; i++)
+            assertEquals(empty.get(i), result.get(i));
+    }
+
+    public void testExceptedResult() {
+        ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(5, 27, 7, ));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(4, 2, 16, 40));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(17, 9, 6, 4 , 5));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 11, 81, 14));
         
-      assertFalse(new App().equalityOfExtendedArrays(array, array2 , 4 , 0 ));
-    }
-
-    public void testEmptyArray2() {
-      ArrayList<Integer> array = new ArrayList<>();
-      ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
+        ArrayList<Integer> expectedResult = new ArrayList<>(Arrays.asList(17, 27, 81, 40));
         
-      assertFalse(new App().equalityOfExtendedArrays(array2, array , 0 , 4));
+        ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
+
+        for (int i = 0; i < result.length; i++)
+            assertTrue(expectedResult.get(i) == result.get(i));
     }
 
-    public void notEqualTheMultiplicationOfTheArrays(){//array1 multiply with the last element of array2
-      ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(4, 3, 2, 1));//for example multiply with 3 the array1  
-      ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(9, 10, 4, 3));//for example multiply with 1 the array2  
-      //expected arrays : array1 =  4 3 2 1 , array2 12 9 6 3 it will return true because 4 3 2 1 is multiplyied with 3 and 12 9 6 3 mul with 1
-      assertFalse(new App().equalityOfExtendedArrays(array1 , array2 , 1 , 3));
+    public void testUnExceptedResult() {
+        ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(5, 27, 7, ));
+        ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(4, 2, 16, 40));
+        ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(17, 9, 6, 4 , 5));
+        ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 11, 81, 14));
+        
+        ArrayList<Integer> expectedResult = new ArrayList<>(Arrays.asList(17, 27, 81, 14));
+        
+        ArrayList<Integer> result = new App().biggestInTheIndices(array1 , array2 , array3 , array4 );
+
+        boolean control = true; 
+        for (int i = 0; i < result.length; i++){
+            if(expectedResult.get(i) != result.get(i)){
+               control = false; 
+            }
+        }
+        assertFalse(control);
     }
-
-    public void equalTheMultiplicationOfTheArrays(){//multiply with the last element of array
-      ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(4, 3, 2, 1));//for example multiply with 2 the array1  
-      ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(8, 6, 4, 2));//for example multiply with 1 the array2  
-      
-      assertTrue(new App().equalityOfExtendedArrays(array1 , array2 , 2 , 1));
-    }
-
-
 }

@@ -1,4 +1,4 @@
-This application takes two list of integer (list1 nad list2) and multiply list1 with the last element of list2 , as the same way multiply list2 with the last element of list1.If the arrays are equal,the app returns true else, returns false
+This application takes four list of integer and create a new list which have the biggest numbers in the all indices.
 
 [![Build Status](https://travis-ci.org/edizuslu/my481Homework.svg?branch=master)](https://travis-ci.org/edizuslu/my481Homework)
 
