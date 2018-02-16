@@ -59,8 +59,11 @@ public class App
        public static void main(String[] args) {
         port(getHerokuAssignedPort());
 
-        get("/", (req, res) -> "Hello, World");
-
+        get("/", (req, res) -> {
+            res.redirect("/compute",301);
+            return "";
+        });
+        
         post("/compute", (req, res) -> {
         
         //input1
