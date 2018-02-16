@@ -42,7 +42,7 @@ public class App
     	return resultArray;	
     }
 
-    public static int thebiggestNumber(int a , int b , int c , int d){
+    public static int biggestNumber(int a , int b , int c , int d){
     	int temp = 0;
     	if (a >= temp)
     		temp = a;

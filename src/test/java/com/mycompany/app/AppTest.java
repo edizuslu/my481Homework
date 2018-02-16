@@ -186,4 +186,8 @@ public class AppTest
         }
         assertFalse(control);
     }
+
+    public void testTheAuxMethod(){
+        assertTrue(48 == new App().biggestNumber(7,8,1,48));
+    }
 }
