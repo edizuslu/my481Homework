@@ -39,7 +39,7 @@ public class AppTest
         assertTrue( true );
     }
 
-    /*public void testNullFirstArray() {
+    public void testNullFirstArray() {
         ArrayList<Integer> empty = new ArrayList<Integer>();
         ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
@@ -190,5 +190,5 @@ public class AppTest
     public void testTheAuxMethod(){
         assertTrue(48 == new App().biggestNumber(7,8,1,48));
     }
-    */
+    
 }
