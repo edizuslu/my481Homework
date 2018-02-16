@@ -155,7 +155,7 @@ public class AppTest
     }
 
     public void testExceptedResult() {
-        ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(5, 27, 7, ));
+        ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(5, 27, 7, 11 ));
         ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(4, 2, 16, 40));
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(17, 9, 6, 4 , 5));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 11, 81, 14));
@@ -169,7 +169,7 @@ public class AppTest
     }
 
     public void testUnExceptedResult() {
-        ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(5, 27, 7, ));
+        ArrayList<Integer> array1 = new ArrayList<>(Arrays.asList(5, 27, 7, 11 ));
         ArrayList<Integer> array2 = new ArrayList<>(Arrays.asList(4, 2, 16, 40));
         ArrayList<Integer> array3 = new ArrayList<>(Arrays.asList(17, 9, 6, 4 , 5));
         ArrayList<Integer> array4 = new ArrayList<>(Arrays.asList(1, 11, 81, 14));
