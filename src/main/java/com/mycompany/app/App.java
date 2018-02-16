@@ -20,7 +20,7 @@ public class App
     	
     	ArrayList<Integer> empty = new ArrayList<Integer>(); 
 
-    	if (array1 == null) return empty;
+    	/*if (array1 == null) return empty;
     	if (array2 == null) return empty;
     	if (array3 == null) return empty;
     	if (array4 == null) return empty;
@@ -29,9 +29,9 @@ public class App
     	if (array2.size() == 0) return empty;
     	if (array3.size() == 0) return empty;
     	if (array4.size() == 0) return empty;
-    	
+    	*/
 
-    	if (array1.size() != array2.size() || array3.size() != array4.size() || array1.size() != array3.size() ) return empty;
+    	/*if (array1.size() != array2.size() || array3.size() != array4.size() || array1.size() != array3.size() ) return empty;*/
 
     	ArrayList<Integer> resultArray = new ArrayList<Integer>();
 		
@@ -63,7 +63,7 @@ public class App
             res.redirect("/compute",301);
             return "";
         });
-        
+
         post("/compute", (req, res) -> {
         
         //input1
