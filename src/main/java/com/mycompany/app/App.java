@@ -36,7 +36,7 @@ public class App
     	ArrayList<Integer> resultArray = new ArrayList<Integer>();
 		
     	for (int i = 0 ; i < array1.size() ; i++){
-    		resultArray.add(biggestNumber(array1.get(i),array2.get(i),array3.get(i),array4.get(i)); 
+    		resultArray.add(biggestNumber(array1.get(i),array2.get(i),array3.get(i),array4.get(i))); 
     	}
 
     	return resultArray;	
